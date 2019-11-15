@@ -4,8 +4,9 @@ export class Item {
     this.weight = weight;
     this.modifiers = modifiers;
   }
-  buy() {}
-  sell()
+  adjustStats(){
+    
+  }
 }
 
 export class Equipment extends Item {
@@ -13,4 +14,6 @@ export class Equipment extends Item {
     super(weight, modifiers);
     this.slot = slot;
   }
+  equip() {}
+  remove() {}
 }

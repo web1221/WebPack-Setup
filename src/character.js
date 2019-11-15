@@ -4,6 +4,7 @@ export class Character {
     this.health = con * 10;
     this.stamina = end * 10;
     this.species = species;
+    this.xp = 0;
 
     this.stats = {
       str: str,
@@ -41,6 +42,16 @@ export class Character {
     this.stats.con += conUp;
     this.stats.end += endUp;
     return 'Level Up';
+  }
+  buy(item) {
+    if(this.xp === item.cost){
+      this.inventory.push(item);
+      return "Purchased"
+    }
+
+  }
+  sell() {
+
   }
 
 

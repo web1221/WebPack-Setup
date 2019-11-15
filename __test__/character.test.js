@@ -1,11 +1,15 @@
 import { Character } from "./../src/character.js"
+import { Item } from "./../src/item.js"
 
 describe ('Character', () => {
   let character
   let enemy
+  let item
+
   beforeEach(() => {
     character = new Character(5,5,5,5, "Tralfamadorian");
     enemy = new Character(5,5,5,5, "Human")
+    item = new Item(10, 10, [1, 1,-1, 2])
   });
 
   test('should access character stats', () => {
@@ -38,5 +42,9 @@ describe ('Character', () => {
     expect(character.stats.int).toEqual(10);
     expect(character.stats.con).toEqual(10);
     expect(character.stats.end).toEqual(10);
+  });
+  test('should access the buy() of a player', () => {
+    character.xp = 10;
+    expect(character.buy(item)).toEqual("Purchased");
   });
 });
